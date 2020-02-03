@@ -66,14 +66,14 @@ def traceroute():
 
     src = []
     if request.path == '/traceroute6': 
-	traceroute = traceroute6
-	if app.config.get("IPV6_SOURCE",""):
-	     src = [ "-s",  app.config.get("IPV6_SOURCE") ]
+        traceroute = traceroute6
+    if app.config.get("IPV6_SOURCE",""):
+        src = [ "-s",  app.config.get("IPV6_SOURCE") ]
 
-    else: 
-	traceroute = traceroute4
-	if app.config.get("IPV4_SOURCE",""):
-	     src = [ "-s",  app.config.get("IPV4_SOURCE") ]
+    else:
+        traceroute = traceroute4
+    if app.config.get("IPV4_SOURCE",""):
+        src = [ "-s",  app.config.get("IPV4_SOURCE") ]
 
     query = request.args.get("q","")
     query = unquote(query)
